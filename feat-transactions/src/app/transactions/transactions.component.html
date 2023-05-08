@@ -1,9 +1,10 @@
 <div class="content">
   <h2 class="title">Transactions</h2>
   <hr />
-  <div class="day" *ngFor="let day of transactionData.days">
+  <div class="day" *ngFor="let day of transactionData.days; let i = index">
     <div class="header transaction-item">
-      <h3 class="sub-title"> {{ day?.id | date : "longDate" }}</h3>
+      <h3 class="sub-title">{{ day?.id | date : "longDate" }}</h3>
+      <h3 *ngIf="i === 0" class="sub-title">EUR</h3>
     </div>
     <ul class="transactions">
       <li *ngFor="let transaction of day.transactions">
@@ -24,9 +25,7 @@
           >
             {{ transaction.amount > 0 ? "+" : ""
             }}{{
-              transaction.currencyRate
-                ? transaction.currencyRate * transaction.amount
-                : (transaction.amount | currency : "EUR" : "code" : ".2-2")
+              getAmountInEuros(transaction) | currency : "EUR" : "" : ".2-2"
             }}
           </span>
         </button>

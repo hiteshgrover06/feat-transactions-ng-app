@@ -9,7 +9,15 @@ import { DataShareService } from 'src/services/data-share.service';
 })
 export class TransactionDetailsComponent {
   public transaction?: Transaction;
-  constructor(public dataShareService: DataShareService) {
+  constructor(private dataShareService: DataShareService) {
     this.transaction = this.dataShareService.transactionDetails;
+  }
+
+  getAmountInEuros(transaction: Transaction): number {
+    return this.dataShareService.getAmountInEuros(transaction);
+  }
+
+  getFriendlyFormatIBAN(iban?: string): string {
+    return this.dataShareService.getFriendlyFormatIBAN(iban) || '-';
   }
 }

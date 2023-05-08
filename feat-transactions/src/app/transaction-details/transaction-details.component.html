@@ -13,9 +13,7 @@
       >
         {{ transaction.amount > 0 ? "+" : ""
         }}{{
-          transaction.currencyRate
-            ? transaction.currencyRate * transaction.amount
-            : (transaction.amount | currency : "EUR" : "symbol" : ".2-2")
+          getAmountInEuros(transaction) | currency : "EUR " : "code" : ".2-2"
         }}
       </span>
     </div>
@@ -30,9 +28,7 @@
     <div class="transaction-item" *ngIf="transaction?.otherParty">
       <span> Account number </span>
       <span>
-        {{
-          dataShareService.getFriendlyFormatIBAN(transaction?.otherParty?.iban)
-        }}
+        {{ getFriendlyFormatIBAN(transaction?.otherParty?.iban) }}
       </span>
     </div>
 
@@ -45,7 +41,7 @@
     <div class="transaction-item">
       <span> Date </span>
       <span>
-        {{ transaction.timestamp | date : "mediumDate" }}
+        {{ transaction.timestamp | date : "medium" }}
       </span>
     </div>
   </div>

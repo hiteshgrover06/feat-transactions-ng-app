@@ -32,6 +32,10 @@ export class TransactionsComponent {
       .subscribe((transactionData) => (this.transactionData = transactionData));
   }
 
+  getAmountInEuros(transaction: Transaction): number {
+    return this.dataShareService.getAmountInEuros(transaction);
+  }
+
   onTransactionClicked(event: Event, transaction: Transaction): void {
     this.dataShareService.transactionDetails = transaction;
     this.router.navigate(['transaction/details']);

@@ -16,4 +16,10 @@ export class DataShareService {
     }
     return iban.replace(/(.{4})(?!$)/g, '$1' + separator);
   }
+
+  getAmountInEuros(transaction: Transaction): number {
+    return transaction?.currencyRate
+      ? transaction?.currencyRate * transaction.amount
+      : transaction.amount;
+  }
 }
