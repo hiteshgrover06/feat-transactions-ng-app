@@ -1,6 +1,6 @@
-<div *ngIf="transaction">
-  <h2 class="title">Transaction details</h2>
-  <hr />
+<h2 class="title">Transaction details</h2>
+<hr />
+<div *ngIf="transaction; else noDetailsFound">
   <div class="details-container">
     <div class="transaction-item">
       <span> Amount </span>
@@ -46,3 +46,11 @@
     </div>
   </div>
 </div>
+
+<ng-template #noDetailsFound>
+  <div class="transaction-item">
+    <a routerLink="" class="sub-title">
+      No details found, go to transactions.</a
+    >
+  </div>
+</ng-template>
