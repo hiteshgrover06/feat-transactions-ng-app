@@ -1,7 +1,8 @@
 # App can be started from the root itslef 
 `npm run start:app`
-* This will install the depencies for both the backend and frontend apps.
-* And opens the application running at `http://localhost:4200/transactions`
+* This will install the dependencies for both the backend and frontend app.
+* Backend will be running at http://localhost:8080/api/transactions 
+* And opens the front end application running at `http://localhost:4200/transactions`
 
 # Assignment Rabobank
 
