@@ -1,0 +1,37 @@
+<div class="content">
+  <h2 class="title">Transactions</h2>
+  <hr />
+  <div class="day" *ngFor="let day of transactionData.days">
+    <div class="header transaction-item">
+      <h3 class="sub-title"> {{ day?.id | date : "longDate" }}</h3>
+    </div>
+    <ul class="transactions">
+      <li *ngFor="let transaction of day.transactions">
+        <button
+          type="button"
+          (click)="onTransactionClicked($event, transaction)"
+          class="row-width transaction-item"
+        >
+          <span class="party-details">{{
+            transaction?.otherParty?.name || transaction?.description
+          }}</span>
+          <span
+            [ngClass]="{
+              amount: true,
+              credit: transaction.amount > 0,
+              debit: !(transaction.amount > 0)
+            }"
+          >
+            {{ transaction.amount > 0 ? "+" : ""
+            }}{{
+              transaction.currencyRate
+                ? transaction.currencyRate * transaction.amount
+                : (transaction.amount | currency : "EUR" : "code" : ".2-2")
+            }}
+          </span>
+        </button>
+      </li>
+      <hr class="divider" />
+    </ul>
+  </div>
+</div>

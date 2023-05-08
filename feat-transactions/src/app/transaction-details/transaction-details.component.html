@@ -1,0 +1,52 @@
+<div *ngIf="transaction">
+  <h2 class="title">Transaction details</h2>
+  <hr />
+  <div class="details-container">
+    <div class="transaction-item">
+      <span> Amount </span>
+      <span
+        [ngClass]="{
+          amount: true,
+          credit: transaction.amount > 0,
+          debit: !(transaction.amount > 0)
+        }"
+      >
+        {{ transaction.amount > 0 ? "+" : ""
+        }}{{
+          transaction.currencyRate
+            ? transaction.currencyRate * transaction.amount
+            : (transaction.amount | currency : "EUR" : "symbol" : ".2-2")
+        }}
+      </span>
+    </div>
+
+    <div class="transaction-item" *ngIf="transaction?.otherParty">
+      <span> Account Name </span>
+      <span>
+        {{ transaction?.otherParty?.name }}
+      </span>
+    </div>
+
+    <div class="transaction-item" *ngIf="transaction?.otherParty">
+      <span> Account number </span>
+      <span>
+        {{
+          dataShareService.getFriendlyFormatIBAN(transaction?.otherParty?.iban)
+        }}
+      </span>
+    </div>
+
+    <div class="transaction-item">
+      <span> Description </span>
+      <span>
+        {{ transaction.description }}
+      </span>
+    </div>
+    <div class="transaction-item">
+      <span> Date </span>
+      <span>
+        {{ transaction.timestamp | date : "mediumDate" }}
+      </span>
+    </div>
+  </div>
+</div>

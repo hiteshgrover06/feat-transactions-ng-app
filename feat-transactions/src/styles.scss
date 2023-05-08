@@ -1,0 +1,150 @@
+/* You can add global styles to this file, and also import other style files */
+/* Application-wide Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2,
+h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+  background: #eee;
+}
+body,
+input[type="text"],
+button {
+  color: #333;
+  font-family: Cambria, Georgia, serif;
+}
+button {
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+// button:hover {
+//   background-color: black;
+//   color: white;
+// }
+button:hover {
+  background-color: #1976d2;
+  color: white;
+}
+
+button:hover > * {
+  color: white;
+  background-color: #1976d2;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.day {
+  border-radius: 4px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.row-width {
+  width: 100%;
+  margin: 0;
+}
+
+.title {
+  font-family: revert;
+  color: #1976d2;
+  // background: #1976d2;
+  margin: 0;
+  padding: 10px 10px;
+}
+
+.sub-title {
+  font-family: revert;
+  color: #1976d2;
+  margin: 0;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.day {
+  border-radius: 2px;
+  // background-color: white;
+  margin-bottom: 20px;
+  // border: 1px solid #96b7d5;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+.row-width {
+  width: 100%;
+  margin: 0;
+}
+
+.amount {
+  font-weight: 500;
+  padding: 2px;
+}
+.credit {
+  background-color: #b5d7b5;
+
+}
+
+.debit {
+  background-color: palevioletred;
+  font-weight: 500;
+  color: white;
+  padding: 2px;
+}
+
+.transactions {
+  background-color: white;
+}
+
+hr,
+hr.divider {
+  height: 1px;
+  background-color: #ccc;
+  border: none;
+}
+
+hr.divider {
+  margin: 10px;
+}
