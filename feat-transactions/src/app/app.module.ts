@@ -9,9 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
-import localeDeExtra from '@angular/common/locales/extra/de';
-
-registerLocaleData(localeDe, 'de-DE', localeDeExtra);
+registerLocaleData(localeDe, 'de');
 
 @NgModule({
   declarations: [
@@ -20,12 +18,7 @@ registerLocaleData(localeDe, 'de-DE', localeDeExtra);
     TransactionDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [
-    {
-      provide: LOCALE_ID,
-      useValue: 'de-DE',
-    },
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

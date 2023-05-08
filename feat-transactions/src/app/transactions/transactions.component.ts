@@ -27,13 +27,17 @@ export class TransactionsComponent {
   }
 
   getTransactionData(): void {
-    this.transactionInquiry
-      .getTransactions()
-      .subscribe((transactionData) => (this.transactionData = transactionData));
+    this.transactionInquiry.getTransactions().subscribe((transactionData) => {
+      this.transactionData = transactionData;
+    });
   }
 
   getAmountInEuros(transaction: Transaction): number {
     return this.dataShareService.getAmountInEuros(transaction);
+  }
+
+  sortTransaction(t1: Transaction, t2: Transaction): number {
+    return new Date(t1.timestamp) < new Date(t2.timestamp) ? 1 : -1;
   }
 
   onTransactionClicked(event: Event, transaction: Transaction): void {

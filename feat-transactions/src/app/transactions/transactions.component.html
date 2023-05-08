@@ -25,7 +25,8 @@
           >
             {{ transaction.amount > 0 ? "+" : ""
             }}{{
-              getAmountInEuros(transaction) | currency : "EUR" : "" : ".2-2"
+              getAmountInEuros(transaction)
+                | currency : "EUR" : "" : ".2-2" : "de"
             }}
           </span>
         </button>

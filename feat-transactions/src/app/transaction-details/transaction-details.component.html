@@ -3,45 +3,47 @@
 <div *ngIf="transaction; else noDetailsFound">
   <div class="details-container">
     <div class="transaction-item">
-      <span> Amount </span>
+      <span class="key"> Amount </span>
       <span
         [ngClass]="{
           amount: true,
+          value: true,
           credit: transaction.amount > 0,
           debit: !(transaction.amount > 0)
         }"
       >
         {{ transaction.amount > 0 ? "+" : ""
         }}{{
-          getAmountInEuros(transaction) | currency : "EUR " : "code" : ".2-2"
+          getAmountInEuros(transaction)
+            | currency : "EUR " : "code" : ".2-2" : "de"
         }}
       </span>
     </div>
 
     <div class="transaction-item" *ngIf="transaction?.otherParty">
-      <span> Account Name </span>
-      <span>
-        {{ transaction?.otherParty?.name }}
+      <span class="key"> Account Name </span>
+      <span class="value">
+        {{ transaction.otherParty?.name }}
       </span>
     </div>
 
     <div class="transaction-item" *ngIf="transaction?.otherParty">
-      <span> Account number </span>
-      <span>
-        {{ getFriendlyFormatIBAN(transaction?.otherParty?.iban) }}
+      <span class="key"> Account number </span>
+      <span class="value">
+        {{ getFriendlyFormatIBAN(transaction.otherParty?.iban) }}
       </span>
     </div>
 
     <div class="transaction-item">
-      <span> Description </span>
-      <span>
+      <span class="key"> Description </span>
+      <span class="value">
         {{ transaction.description }}
       </span>
     </div>
     <div class="transaction-item">
-      <span> Date </span>
-      <span>
-        {{ transaction.timestamp | date : "medium" }}
+      <span class="key"> Date </span>
+      <span class="value">
+        {{ transaction.timestamp | date : "EE, MMMM d, y h:mm a" }}
       </span>
     </div>
   </div>
