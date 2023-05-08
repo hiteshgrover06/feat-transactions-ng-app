@@ -1,3 +1,8 @@
+# App can be started from the root itslef 
+`npm run start:app`
+* This will install the depencies for both the backend and frontend apps.
+* And open the application running at `http://localhost:4200/transactions`
+
 # Assignment Rabobank
 
 Rabobank’s software is mainly used to get insights on customer transactions. Within this assignment there is some backend software created to spin up a NodeJS service which serves a transactions file. Create an Angular application where a user can see their transactions in in list (timeline).
