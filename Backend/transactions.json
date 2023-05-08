@@ -94,7 +94,7 @@
         }
       },{
         "id": 2,
-        "timestamp": "2022-11-06T12:45:47.123456",
+        "timestamp": "2022-11-02T12:45:47.123456",
         "amount": -50,
         "currencyCode": "EUR",
         "description": "ATM"

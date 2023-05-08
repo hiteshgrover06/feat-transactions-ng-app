@@ -7,7 +7,7 @@
       <h3 *ngIf="i === 0" class="sub-title">EUR</h3>
     </div>
     <ul class="transactions">
-      <li *ngFor="let transaction of day.transactions">
+      <li *ngFor="let transaction of day.transactions | orderBy: 'desc'">
         <button
           type="button"
           (click)="onTransactionClicked($event, transaction)"
