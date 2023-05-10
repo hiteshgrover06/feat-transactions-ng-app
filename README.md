@@ -4,9 +4,9 @@
 * Backend will be running at http://localhost:8080/api/transactions 
 * And opens the front end application running at `http://localhost:4200/transactions`
 
-# Assignment Rabobank
+# Assignment 
 
-Rabobank’s software is mainly used to get insights on customer transactions. Within this assignment there is some backend software created to spin up a NodeJS service which serves a transactions file. Create an Angular application where a user can see their transactions in in list (timeline).
+This software is mainly used to get insights on customer transactions. Within this assignment there is some backend software created to spin up a NodeJS service which serves a transactions file. Create an Angular application where a user can see their transactions in in list (timeline).
 
 The requirements are:
 - All transactions should be shown 
